@@ -1,1 +1,101 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+  --primary-color: #0206F9;
+  --secondary-color: #18EBF2;
+  --thirdy-color: #042641;
+  --danger-color: #E34137;
+  --light-color: #FFFFFF;
+  --card-color: #042641;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+}
+
+//fonts
+@font-face {
+  font-family: worksans-light;
+  src: url("/assets/fonts/WorkSans-Light.otf");
+}
+
+@font-face {
+  font-family: worksans-bold;
+  font-weight: bold;
+  src: url("/assets/fonts/WorkSans-Bold.otf");
+}
+
+//custom
+.x-padding{
+  padding: 0 10rem;
+}
+
+.left-padding{
+  padding-left: 10rem;
+}
+
+.d-none{
+  display: none !important;
+}
+
+//buttons
+.primary-button{
+  transition: all 1s;
+  max-width: 400px;
+  border: 0px;
+  color: var(--light-color);
+  font-family: worksans-bold;
+  font-size: 1.4rem;
+  transition: all 1s;
+  background-image: linear-gradient(to left, var(--primary-color) 55%, var(--secondary-color) 100%);
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer !important;
+  outline: none;
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+
+  &:hover{
+    transition: all 1s;
+    background-image: linear-gradient(to left, var(--primary-color) 0%, var(--secondary-color) 90%);
+  }
+
+  &:focus{
+    transition: all 1s;
+    background: var(--secondary-color);
+  }
+
+}
+
+@media (max-width: 876px) {
+
+  .x-padding{
+    padding: 0 1.5rem;
+  }
+
+  .primary-button{
+    transition: all 1s;
+    min-width: 250px;
+    height: 40px;
+    width: 100%;
+  }
+
+  .title-mobile{
+    font-size: 2rem !important;
+  }
+
+  .subtitle-mobile{
+    font-size: 1.7rem !important;
+  }
+
+  .text-mobile{
+    font-size: 1rem !important;
+  }
+}

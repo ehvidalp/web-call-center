@@ -1,0 +1,143 @@
+@import "../../../assets/scss/material-custom.scss";
+@import "../../../assets//scss//breakpoint.scss";
+
+.container {
+  transition: all 1s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  box-sizing: border-box;
+}
+
+.banner {
+  transition: all 1s;
+  box-sizing: border-box;
+  width: 45%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 80px;
+  justify-content: center;
+  background-image: url("../../../assets/img/login-banner.png");
+  background-size: cover;
+
+  picture {
+    width: 100%;
+    text-align: center;
+    img {
+      width: 55%;
+      min-width: 350px;
+    }
+  }
+}
+
+.form {
+  transition: all 1s;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 55%;
+  height: auto;
+  margin-top: 13px;
+
+  form {
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    font-family: worksans-semibold;
+    font-size: 4em;
+    word-break: keep-all;
+    margin: 1rem 0;
+  }
+
+  mat-form-field {
+    margin-top: 1rem;
+    width: 100%;
+    font-size: 1rem;
+    font-family: worksans-regular;
+  }
+
+  &__error {
+    visibility: hidden;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    color: var(--danger-color);
+    font-family: worksans-regular;
+    font-size: 1rem;
+  }
+}
+
+footer {
+  transition: all 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 100%;
+  background-color: var(--bg-primary);
+  bottom: 0;
+  position: fixed;
+
+  img {
+    width: 150px;
+  }
+}
+
+.primary-button {
+  transition: all 1s;
+  height: 50px;
+  font-size: 1.8rem;
+}
+
+.spinner:before {
+  width: 25px;
+  height: 25px;
+}
+
+@include small-device {
+  .container {
+    transition: all 1s;
+    flex-direction: column-reverse;
+    height: 100%;
+    min-height: 500px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner {
+    display: none;
+  }
+
+  .form {
+    transition: all 1s;
+    width: 100%;
+
+    mat-form-field {
+      margin-top: 0.5rem !important;
+      font-size: 0.75rem;
+    }
+
+    form {
+      width: 90%;
+      min-height: 0;
+      height: calc(100% - 50px);
+    }
+  }
+
+  .primary-button {
+    transition: all 1s;
+    margin-top: 0 !important;
+    font-size: 1.3rem;
+    height: 40px !important;
+  }
+}

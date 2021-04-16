@@ -1,0 +1,87 @@
+<div class="container-module">
+  <div class="title">
+    <picture>
+      <img src="assets/svg/person-lines.svg" width="35px">
+    </picture>
+    <h1>Usuarios del sistema</h1>
+  </div>
+  <hr class="custom-hr">
+  <div class="table">
+    <ejs-grid
+      #users
+      [dataSource]="usersData"
+      [allowPaging]="true"
+      [pageSettings]="pageSettings"
+      [locale]="locale"
+      [allowSorting]="true"
+      [toolbar]="toolbarOptions"
+    >
+      <e-columns>
+        <e-column field="names" headerText="Nombre"></e-column>
+        <e-column field="surnames" headerText="Apellido"></e-column>
+        <e-column field="user" headerText="Usuario"></e-column>
+        <e-column headerText="Rol">
+          <ng-template #template let-data>
+            {{data.role.name}}
+          </ng-template>
+        </e-column>
+        <e-column>
+          <ng-template #template let-data>
+            <button type="button" (click)="getUser(data.id)" class="update-link-grid">Editar</button>
+          </ng-template>
+        </e-column>
+      </e-columns>
+    </ejs-grid>
+  </div>
+  <div class="title-hr mt-3">
+    <h1>Editar usuario</h1>
+    <hr>
+  </div>
+  <form [formGroup]="userForm" (ngSubmit)="editUser()">
+    <div class="group-input">
+      <mat-form-field appearance="outline">
+        <mat-label>Nombres</mat-label>
+        <input formControlName="names" matInput placeholder="Ingrese los nombres del usuario" autocomplete="off">
+        <mat-error *ngIf="uf.names.touched && uf.names.errors?.required">Campo requerido</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Apellidos</mat-label>
+        <input formControlName="surnames" matInput placeholder="Ingrese los apellidos del usuario" autocomplete="off">
+        <mat-error *ngIf="uf.surnames.touched && uf.surnames.errors?.required">Campo requerido</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre de usuario</mat-label>
+        <input formControlName="user" matInput placeholder="Ingrese el nombre de usuario" autocomplete="off">
+        <mat-error *ngIf="uf.user.touched && uf.user.errors?.required">Campo requerido</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="group-input">
+      <mat-form-field appearance="outline">
+        <mat-label>Nueva contraseña</mat-label>
+        <input formControlName="newPassword" [type]="hiddenPassword ? 'password' : 'text'" matInput placeholder="Ingrese la contraseña" autocomplete="off">
+        <button [disabled]="disabledForm" type="button" mat-icon-button matSuffix (click)="hiddenPassword = !hiddenPassword">
+          <mat-icon>{{hiddenPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="uf.newPassword.touched && uf.newPassword.errors?.required">Campo requerido</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Confirmar contraseña</mat-label>
+        <input formControlName="confirmPassword" [type]="hiddenPassword ? 'password' : 'text'" matInput placeholder="Confirme la contraseña" autocomplete="off">
+        <button [disabled]="disabledForm" type="button" mat-icon-button matSuffix (click)="hiddenPassword = !hiddenPassword">
+          <mat-icon>{{hiddenPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="uf.confirmPassword.touched && uf.confirmPassword.errors?.required">Campo requerido</mat-error>
+        <mat-error *ngIf="uf.confirmPassword.touched && uf.confirmPassword.errors?.passwordMismatch">Las contraseñas no coinciden</mat-error>
+      </mat-form-field>
+      <div class="group-buttons mt-2">
+        <button [disabled]="disabledForm" mat-raised-button class="primary-button btn-max-w btn-h" type="submit">
+          <span *ngIf="!loading">Guardar</span>
+          <span class="spinner" *ngIf="loading">.</span>
+        </button>
+        <button [disabled]="disabledForm" (click)="resetForm()" mat-raised-button class="danger-button btn-max-w btn-h" type="button">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="banner">
+    <picture>
+      <img src="assets/svg/sireco-logo.svg" />
+    </picture>
+  </div>
+  <!---------------------------------------------------------------->
+  <!---------------------------------------------------------------->
+  <div class="form">
+    <form [formGroup]="loginForm!" (ngSubmit)="authentication()">
+      <label class="form__title">Ingrese</label>
+      <label class="form__title mb-3">al sistema</label>
+      <mat-form-field appearance="outline">
+        <mat-label>Usuario</mat-label>
+        <input
+          formControlName="username"
+          matInput
+          placeholder="Ingrese se usuario"
+          autocomplete="off"
+        />
+        <mat-error *ngIf="lf.username.touched && lf.username.errors?.required"
+          >Campo requerido</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Contraseña</mat-label>
+        <input
+          formControlName="password"
+          matInput
+          [type]="hiddenPassword ? 'password' : 'text'"
+        />
+        <button
+          type="button"
+          mat-icon-button
+          matSuffix
+          (click)="hiddenPassword = !hiddenPassword"
+        >
+          <mat-icon>{{
+            hiddenPassword ? "visibility_off" : "visibility"
+          }}</mat-icon>
+        </button>
+        <mat-error *ngIf="lf.password.touched && lf.password.errors?.required"
+          >Campo requerido</mat-error
+        >
+      </mat-form-field>
+      <div
+        class="form__error"
+        [class.visibility]="errorLogin"
+        [class.animation-fadeInRight]="errorLogin"
+      >
+        {{ errorMsg }}
+      </div>
+      <button
+        mat-raised-button
+        class="primary-button mt-1 font-worksans-semibold"
+      >
+        <span *ngIf="!loading">Entrar</span>
+        <span class="spinner" *ngIf="loading">.</span>
+      </button>
+    </form>
+  </div>
+  <!---------------------------------------------------------------->
+  <!---------------------------------------------------------------->
+  <footer>
+    <img src="assets/svg/ataraxia.svg" />
+  </footer>
+</div>

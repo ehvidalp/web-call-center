@@ -1,0 +1,31 @@
+<nav
+  [class.navbar-mobile]="(isMobile | async) === true && openMain === true"
+  [class.navbar-full]="(isMobile | async) === false"
+  [class.navbar]="(isMobile | async) === false"
+  [class.d-none]="!openMain"
+  [class.bg-navbar-messages]="isMessagesPage"
+  class="navbar"
+>
+  <ul>
+    <div class="navbar-full__home">
+      <a [class.btn-home-scroll]="!isTopLayout || isMessagesPage" routerLink="/" class="btn-home"></a>
+    </div>
+    <li class="x-nav-padding">
+      <a routerLink="/" [fragment]="(isMessagesPage)? '':'sireco'" (click)="openMain = !openMain" [class.link-active]="sectionsHtml[1].status">Acerca de Sireco</a>
+      <a routerLink="/messages" (click)="openMain = !openMain" [class.link-active]="sectionsHtml[2].status" routerLinkActive="link-active">Mensajes</a>
+      <a routerLink="/"  fragment="contact" (click)="openMain = !openMain" [class.link-active]="sectionsHtml[4].status">Contáctanos</a>
+      <a routerLink="/"  fragment="testimonials" (click)="openMain = !openMain" [class.link-active]="sectionsHtml[3].status">Testimonios</a>
+    </li>
+  </ul>
+</nav>
+
+<div
+  class="navbar"
+  [class.d-none]="(isMobile | async) === false || openMain === true"
+  [class.toogle]="(isMobile | async) === true"
+  [class.bg-navbar-messages]="isMessagesPage && (isMobile | async) === true"
+>
+  <button type="button" (click)="openMain = !openMain">
+    <img [src]="(!openMain) ? 'assets/svg/hamburger.svg': 'assets/svg/close.svg'" />
+  </button>
+</div>

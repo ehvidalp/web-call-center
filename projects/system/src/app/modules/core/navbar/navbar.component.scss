@@ -1,0 +1,154 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  width: 100%;
+  height: 80px;
+  background: var(--bg-primary);
+  border-bottom: 3px solid var(--secondary-color);
+  color: var(--bg-light);
+  z-index: 1;
+  position: fixed;
+}
+
+.hamburger {
+  width: 90px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    outline: none;
+    text-decoration: none;
+    background: transparent;
+    border: 0px;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+
+    &:hover {
+      background-color: rgb(58, 159, 233, 35%);
+    }
+
+    img {
+      margin-top: 0.4rem;
+    }
+  }
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 12%;
+  min-width: 200px;
+}
+
+.chronometer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 140px;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  width: 44%;
+  min-width: 400px;
+
+  &__input {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 100%;
+  }
+
+  picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    width: 40px;
+    background: #eaebeb;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 0px;
+  }
+
+  input {
+    height: 32px;
+    width: calc(100% - 40px);
+    outline: none;
+    text-decoration: none;
+    border: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 1rem;
+    font-family: worksans-regular;
+  }
+}
+
+label {
+  font-family: worksans-regular;
+  color: var(--thirdy-color);
+  font-size: 1.1em;
+}
+
+.files {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 70px;
+}
+
+.money {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 180px;
+
+  label {
+    margin-left: 1rem;
+  }
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 220px;
+
+  button {
+    font-family: worksans-regular;
+    color: var(--thirdy-color);
+    font-size: 1.1em;
+  }
+}
+
+.change-password {
+  font-family: worksans-semibold;
+  color: var(--bg-primary);
+}
+
+.log-out {
+  font-family: worksans-semibold;
+  color: var(--danger-color);
+  display: flex;
+  justify-content: center;
+}
+
+.hr-menu {
+  width: 80%;
+  border: 0px;
+  border-bottom: 1px solid var(--bg-primary);
+}
+
+::ng-deep  .mat-menu-content {
+  background: var(--bg-gray) !important;
+}

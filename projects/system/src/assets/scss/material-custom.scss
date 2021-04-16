@@ -1,0 +1,24 @@
+//material
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: var(--primary-color) ;
+}
+
+::ng-deep .mat-form-field-label {
+  color: var(--primary-color) ;
+}
+
+::ng-deep
+  .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid
+  .mat-form-field-outline-thick {
+  color: var(--danger-color) ;
+  opacity: 0.8 ;
+}
+
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color: var(--danger-color) ;
+}
+
+mat-form-field,
+mat-error {
+  font-family: worksans-regular ;
+}

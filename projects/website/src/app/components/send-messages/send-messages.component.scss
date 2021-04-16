@@ -1,0 +1,135 @@
+@import "../../../assets/scss/breakpoint.scss";
+
+.container {
+  transition: all 1s;
+  width: 100%;
+  min-height: 500px;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(359px, 1fr));
+  grid-gap: 100px;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: rgb(2, 6, 249, 0.06);
+  padding: 3rem 0rem;
+}
+
+.star-blue {
+  padding-left: 15rem;
+  margin-bottom: -1rem;
+}
+
+.star-yellow {
+  margin-left: 10rem;
+  margin-top: 2rem;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  padding-left: 13rem;
+  align-content: center;
+
+  &__images {
+    display: inherit;
+    flex-direction: column;
+    margin-left: -3rem;
+  }
+
+  &__title {
+    display: inherit;
+    flex-direction: row;
+    font-family: worksans-bold;
+    font-size: 2.5rem;
+
+    picture {
+      margin-right: 2rem;
+    }
+  }
+
+  &__text {
+    font-family: worksans-light;
+    font-size: 1.5rem;
+    text-align: justify;
+  }
+}
+
+.primary-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none !important;
+  outline: none !important;
+  margin-top: 3rem;
+
+  span{
+    margin-right: 1.5rem;
+  }
+}
+
+.image {
+  transition: all 1s;
+  height: 100%;
+  display: flex;
+  align-items: center !important;
+  justify-content: flex-start !important;
+
+  img {
+    width: 60%;
+    min-width: 359px;
+  }
+}
+
+
+@include small-device {
+
+  .container{
+    width: calc(100% - 2rem);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    grid-template-columns: repeat(1, 90%);
+  }
+
+  .star-blue {
+    padding-left: 0rem;
+    margin-bottom: -1rem;
+  }
+
+  .star-yellow {
+    margin-left: 0rem;
+    margin-top: 2rem;
+  }
+
+  .information {
+    width: 100%;
+    padding-left: 0;
+    &__images {
+      margin-left: 0rem;
+    }
+
+  }
+
+  .image {
+    transition: all 1s;
+    justify-content: center !important;
+    img {
+      width: 90%;
+    }
+  }
+
+  .image {
+    transition: all 1s;
+    height: 100%;
+    display: flex;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    img {
+      width: 100%;
+      min-width: 0;
+    }
+  }
+
+}

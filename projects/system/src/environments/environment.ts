@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: ''  
+  baseUrl: 'http://localhost:3000/api/',
+  blobSearch: 'blob:http://',
 };
 
 /*

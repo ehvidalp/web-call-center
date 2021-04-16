@@ -1,0 +1,30 @@
+<nav [class.min-nav]="!extendedMain"  [class.animation-fadeInLeft-main]="!extendedMain">
+  <div class="wrapper">
+    <a [class.link-min-nav]="!extendedMain"  routerLink="/dashboard" routerLinkActive="active-link" class="extend-main">
+      <img src="assets/svg/pencil-square.svg" width="24" />
+      <span [class.d-none]="!extendedMain">Principal</span>
+    </a>
+    <hr [class.hr-min]="!extendedMain" />
+    <a routerLink="/a" routerLinkActive="active-link" [class.link-min-nav]="!extendedMain" class="extend-main">
+      <img src="assets/svg/file-earmark-bar-graph.svg" width="24" />
+      <span [class.d-none]="!extendedMain">Reportes</span>
+    </a>
+    <hr />
+    <a routerLink="/a" routerLinkActive="active-link" [class.link-min-nav]="!extendedMain"  class="extend-main">
+      <img src="assets/svg/envelope-fill.svg" width="24" />
+      <span [class.d-none]="!extendedMain">Mensajes</span>
+    </a>
+    <a routerLink="/a" routerLinkActive="active-link" [class.link-min-nav]="!extendedMain"  class="extend-main">
+      <img src="assets/svg/arrow-down-circle-fill.svg" width="24" />
+      <span [class.d-none]="!extendedMain">Subir archivos</span>
+    </a>
+    <a routerLink="users" routerLinkActive="active-link" [class.link-min-nav]="!extendedMain" class="extend-main">
+      <img src="assets/svg/person-lines-fill.svg" width="24" />
+      <span [class.d-none]="!extendedMain">Usuarios</span>
+    </a>
+    <a routerLink="/a" routerLinkActive="active-link" [class.link-min-nav]="!extendedMain" class="extend-main">
+      <img src="assets/svg/tools.svg" width="24" />
+      <span [class.d-none]="!extendedMain">Mantenimientos</span>
+    </a>
+  </div>
+</nav>

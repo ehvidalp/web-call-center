@@ -1,0 +1,9 @@
+<div class="container" [class.extended-main]="extendedMain">
+  <app-navbar (extendedMain)="getExtendedMain($event)" class="navbar"></app-navbar>
+  <app-sidebar [extendedMain]="extendedMain"class="sidebar"></app-sidebar>
+  <div class="render-app">
+    <div class="card-render">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container" id="clients">
+  <h1 class="title">
+    Envío de mensajes masivos <br> a tu cartera de clientes
+  </h1>
+  <picture>
+    <img src="assets/svg/send-messages.svg" />
+  </picture>
+  <div class="cards">
+    <div class="cards__item text-mobile" [class.animation-fadeInRight-5]="isCardMessages">
+      Envía mensajes desde tu computadora, por medio de nuestra aplicación,
+      hasta cualquier teléfono de cualquier compañía y dirección de correo.
+    </div>
+    <div class="cards__item text-mobile" [class.animation-fadeInRight-7]="isCardMessages">
+      Selecciona listados de clientes específicos a los que necesitas que el
+      mensaje llegue, escribe el mensaje y el sistema automáticamente enviará
+      los correos o mensajes de texto.
+    </div>
+  </div>
+  <a routerLink="/"  fragment="contact" class="primary-button">¡PRUEBALO GRÁTIS!</a>
+</div>

@@ -1,0 +1,90 @@
+<div class="app">
+  <div class="title">
+    <label class="title-mobile" [class.d-none]="showMessage">
+      ¡Solicita tu demo!
+    </label>
+    <picture>
+      <img src="assets/svg/two-stars.svg" width="20px" />
+    </picture>
+  </div>
+  <div class="container" id="contact">
+    <div [class.justify-center] ="showMessage" class="form" >
+      <div [class.d-none]="!showMessage" class="title-mobile title-message" [class.animation-fadeInRight]="showMessage">
+        <label class="title-mobile">
+          ¡Gracias por ponerte en contácto con nosotros!
+        </label>
+        <picture>
+          <img src="assets/svg/two-stars.svg" width="20px" />
+        </picture>
+      </div>
+      <div class="subtitle-mobile" class="form__subtitle" [class.animation-fadeInRight]="showMessage">
+        {{ (showMessage)? 'Nos estaremos comunicando lo antes posible': 'Comunicándote con nosotros:'}}
+      </div>
+      <form [class.d-none]="showMessage" [class.d-none]="showMessage" [formGroup]="demoForm" (ngSubmit)="sendRequestDemo()" [class.d-none]="showMessage">
+        <div class="form__item">
+          <label class="input-material">
+            <input type="text" placeholder=" " formControlName="fullName" >
+            <span>Nombre y apellido</span>
+          </label>
+          <div class="form__warning" *ngIf="df.fullName.touched && df.fullName.errors?.required">*Este campo es requerido</div>
+        </div>
+        <div class="form__item">
+          <label class="input-material">
+            <input type="text" placeholder=" " formControlName="company">
+            <span>Compañía</span>
+          </label>
+          <div class="form__warning" *ngIf="df.company.touched && df.company.errors?.required">*Este campo es requerido</div>
+        </div>
+        <div class="form__item">
+          <label class="input-material">
+            <input pattern="^(0|\+?[1-9]\d*)$" type="tel" placeholder=" " formControlName="phone">
+            <span>Teléfono</span>
+          </label>
+          <div class="form__warning" *ngIf="df.phone.touched && df.phone.errors?.required && !df.phone.invalid">*Este campo es requerido</div>
+          <div class="form__warning" *ngIf="df.phone.touched && df.phone.invalid || df.phone.touched && df.phone.errors?.minlength || df.phone.touched && df.phone.errors?.maxlength">*Teléfono inválido</div>
+        </div>
+        <div class="form__item">
+          <label class="input-material">
+            <input type="email" placeholder=" " formControlName="email">
+            <span>Correo Electrónico</span>
+          </label>
+          <div class="form__warning" *ngIf="df.email.touched && df.email.errors?.required">*Este campo es requerido</div>
+          <div class="form__warning" *ngIf="df.email.touched && df.email.errors?.email">*Correo electrónico inválido</div>
+        </div>
+        <button type="submit" class="primary-button">
+          ¡ENVIAR!
+        </button>
+      </form>
+    </div>
+    <div class="information">
+      <div class="information__segment">
+        <div class="information__title">
+          <picture>
+            <img src="assets/svg/star-blue.svg" width="20px" />
+          </picture>
+          <picture>
+            <img src="assets/svg/phone.svg" />
+          </picture>
+          <label class="subtitle-mobile">Tel:</label>
+        </div>
+        <div class="information__subtitle text-mobile">+502 2228 3790</div>
+      </div>
+      <div class="information__segment">
+        <div class="information__title">
+          <picture>
+            <img src="assets/svg/star-blue.svg" width="20px" />
+          </picture>
+          <picture>
+            <img src="assets/svg/mail.svg" />
+          </picture>
+          <label class="subtitle-mobile">Correo:</label>
+        </div>
+        <div class="information__subtitle text-mobile">info@ataraxia720.com</div>
+      </div>
+      <div class="information__image">
+        <img src="assets/gif/astronauta.gif" width="300px" />
+      </div>
+    </div>
+  </div>
+
+</div>

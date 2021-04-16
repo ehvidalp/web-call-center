@@ -1,0 +1,45 @@
+<div class="navbar">
+  <div class="hamburger">
+    <button (click)="showExtendedMain()">
+      <img src="assets/svg/list.svg" width="35" />
+    </button>
+  </div>
+  <picture class="logo">
+    <img src="assets/svg/ataraxia.svg" width="180px" />
+  </picture>
+  <div class="chronometer">
+    <img src="assets/svg/clock-fill.svg" width="35px" />
+    <label>{{ chronometer }}</label>
+  </div>
+  <div class="search">
+    <div class="search__input">
+      <picture>
+        <img src="assets/svg/search.svg" width="25px" />
+      </picture>
+      <input type="text" />
+    </div>
+  </div>
+  <div class="files">
+    <img src="assets/svg/file-earmark-text-fill.svg" width="35px" />
+    <label>{{ files }}</label>
+  </div>
+  <div class="money">
+    <img src="assets/svg/cash.svg" width="40px" />
+    <label>Q {{ money }}</label>
+  </div>
+  <div class="user">
+    <img src="assets/svg/person-circle.svg" width="35px" />
+    <button mat-button [matMenuTriggerFor]="menu">
+      {{ userName }}
+    </button>
+    <mat-menu #menu="matMenu">
+      <a routerLink="" class="change-password" mat-menu-item
+        >Cambiar contraseña</a
+      >
+      <hr class="hr-menu" />
+      <button (click)="logOut()" type="button" class="log-out" mat-menu-item>
+        Salir
+      </button>
+    </mat-menu>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+@import "../../../../assets/scss/material-custom.scss";
+
+.container-module{
+  padding-bottom: 3rem;
+}
+
+
+form{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-gap: 10px;
+  padding-left: 2rem;
+  padding-top: 1rem;
+
+  mat-form-field{
+    width: 90%;
+  }
+}
+
+.group-input{
+  display: flex;
+  flex-direction: column;
+
+  mat-form-field{
+    margin-top: 1rem;
+  }
+}
+
+.group-buttons{
+  width: 90%;
+}

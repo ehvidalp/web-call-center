@@ -1,0 +1,95 @@
+@import "../../../assets/scss/breakpoint.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px !important;
+}
+
+.large-image {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 50%;
+    min-width: 200px;
+  }
+}
+
+.content-info {
+  transition: all 1s;
+  width: 100%;
+  padding-bottom: 4rem;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(359px, 1fr));
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-left: 25%;
+  justify-content: flex-end !important;
+  align-content: center !important;
+
+  &__images {
+    display: inherit;
+    flex-direction: column;
+  }
+
+  &__title {
+    display: inherit;
+    flex-direction: row;
+    font-family: worksans-bold;
+    font-size: 3.5rem;
+
+    picture {
+      margin-right: 2rem;
+    }
+  }
+}
+
+.information-text {
+  width: 60%;
+  font-family: worksans-light;
+  font-size: 2rem;
+  text-align: justify;
+}
+
+@include small-device {
+  .content-info {
+    width: 100%;
+    grid-template-columns: repeat(1, 90%);
+    padding-bottom: 3rem;
+  }
+
+  .information {
+    width: 90%;
+    margin-left: 0;
+
+    &__images {
+      margin-left: 0rem;
+    }
+
+    &__title {
+      picture {
+        margin-right: 0rem;
+      }
+    }
+  }
+
+  .information-text {
+    margin-top: -1rem !important;
+    width: 100%;
+  }
+
+  .text-mobile{
+    font-size: 1rem !important;
+  }
+}
